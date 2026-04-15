@@ -2,33 +2,45 @@
 
 int main()
 {
-    int N = 0;
-    int n = 0;
-    int a = 0;
-    int b = 0;
-    char ch = '\0';
+    int N;
+    int n = 0;   // 숫자 연속 개수
+    int a = 0;   // 숫자 최대값
+    int b = 0;   // 소문자 최대값
+    int lc = 0;  // 소문자 연속 개수 (추가)
+    char ch;
 
     scanf("%d", &N);
 
-    for (n = 0; n < N; n = n + 1)
-    {
+    for(int i = 0; i < N; i++){
         scanf(" %c", &ch);
 
-        if (ch >= 'a' && ch <= 'z')
-        {
-            a = a + 1;
-            b = 0;
+        // 소문자
+        if(ch >= 'a' && ch <= 'z'){
+            lc++;
+            if(lc > b){
+                b = lc;
+            }
+            n = 0; // 숫자 끊김
         }
 
-        if (ch >= '0' && ch <= '9')
-        {
-            b = b + 1;
-            a = 0;
+        // 숫자
+        else if(ch >= '0' && ch <= '9'){
+            n++;
+            if(n > a){
+                a = n;
+            }
+            lc = 0; // 소문자 끊김
+        }
+
+        // 그 외 (대문자 등)
+        else{
+            n = 0;
+            lc = 0;
         }
     }
 
-    printf("%d", a);
-    printf("\n%d", b);
+    printf("%d\n", b); // 소문자 최대
+    printf("%d\n", a); // 숫자 최대
 
     return 0;
 }
