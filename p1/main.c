@@ -11,23 +11,30 @@ int main()
     scanf("%d",&answer);
     
     do{
-        scanf("%d",&b);
+        scanf("\n%d",&b);
         if(answer>b){
-            printf("%d<?\n",b);
+            printf("%d<?",b);
         
         t=t+1;
         
         }
-        if(answer<b){
-            printf("%d>?\n",b);
+        else if(answer<b){
+            printf("%d>?",b);
             
         t=t+1;
         
         }
+        
+        
+        
+        
+         
     }while(answer!=b);
+    
     
     printf("%d==?\n",b);
     
-    printf("%d\n",t);
+    
+    printf("\n%d",t);
     
 }
