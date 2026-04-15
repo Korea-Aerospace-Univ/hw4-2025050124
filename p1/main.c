@@ -13,13 +13,13 @@ int main()
     do{
         scanf("\n%d",&b);
         if(answer>b){
-            printf("%d<?",b);
+            printf("%d<?\n",b);
         
         t=t+1;
         
         }
         else if(answer<b){
-            printf("%d>?",b);
+            printf("%d>?\n",b);
             
         t=t+1;
         
