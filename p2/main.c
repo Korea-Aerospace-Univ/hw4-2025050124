@@ -3,10 +3,10 @@
 int main()
 {
     int N;
-    int n = 0;   // 숫자 연속 개수
-    int a = 0;   // 숫자 최대값
-    int b = 0;   // 소문자 최대값
-    int lc = 0;  // 소문자 연속 개수 (추가)
+    int n = 0;   
+    int a = 0;   
+    int b = 0;   
+    int lc = 0;  
     char ch;
 
     scanf("%d", &N);
@@ -14,33 +14,33 @@ int main()
     for(int i = 0; i < N; i++){
         scanf(" %c", &ch);
 
-        // 소문자
+        
         if(ch >= 'a' && ch <= 'z'){
             lc++;
             if(lc > b){
                 b = lc;
             }
-            n = 0; // 숫자 끊김
+            n = 0; 
         }
 
-        // 숫자
+        
         else if(ch >= '0' && ch <= '9'){
             n++;
             if(n > a){
                 a = n;
             }
-            lc = 0; // 소문자 끊김
+            lc = 0; 
         }
 
-        // 그 외 (대문자 등)
+        
         else{
             n = 0;
             lc = 0;
         }
     }
 
-    printf("%d\n", b); // 소문자 최대
-    printf("%d\n", a); // 숫자 최대
+    printf("%d\n", b); 
+    printf("%d\n", a); 
 
     return 0;
 }
